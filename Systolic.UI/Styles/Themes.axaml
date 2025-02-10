@@ -1,0 +1,39 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.ThemeDictionaries>
+
+        <ResourceDictionary x:Key="Default">
+            <SolidColorBrush x:Key="NodeBackgroundBrush">White</SolidColorBrush>
+            <SolidColorBrush x:Key="NodeForegroundBrush">Black</SolidColorBrush>
+            <SolidColorBrush Color="#FFF5F5F5" x:Key="EditorBackground" />
+            <SolidColorBrush Color="White" x:Key="DrawingBackground" />
+            <SolidColorBrush Color="#2c2c2c" x:Key="SeparatorBackground" />
+            <VisualBrush
+                DestinationRect="0,0,20,20"
+                SourceRect="0,0,20,20"
+                TileMode="Tile"
+                x:Key="EditorCheckerBoard">
+                <VisualBrush.Visual>
+                    <Path Data="M 0,0 L 0,10 L 10,10 L 10,0 Z M 10,10 L 10,20 L 20,20 L 20,10 Z" Fill="#FFF0F0F0" />
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="NodeBackgroundBrush">Black</SolidColorBrush>
+            <SolidColorBrush x:Key="NodeForegroundBrush">White</SolidColorBrush>
+            <SolidColorBrush Color="#FF808080" x:Key="EditorBackground" />
+            <SolidColorBrush Color="#FF808080" x:Key="DrawingBackground" />
+            <SolidColorBrush Color="#2c2c2c" x:Key="SeparatorBackground" />
+            <VisualBrush
+                DestinationRect="0,0,20,20"
+                SourceRect="0,0,20,20"
+                TileMode="Tile"
+                x:Key="EditorCheckerBoard">
+                <VisualBrush.Visual>
+                    <Path Data="M 0,0 L 0,10 L 10,10 L 10,0 Z M 10,10 L 10,20 L 20,20 L 20,10 Z" Fill="#FFF0F0F0" />
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </ResourceDictionary>
+
+    </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>

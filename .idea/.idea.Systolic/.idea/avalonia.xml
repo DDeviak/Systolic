@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Systolic.DraftUI/App.axaml" value="Systolic.DraftUI/Systolic.DraftUI.csproj" />
+        <entry key="Systolic.DraftUI/Views/MainView.axaml" value="Systolic.DraftUI/Systolic.DraftUI.csproj" />
+        <entry key="Systolic.DraftUI/Views/MainWindow.axaml" value="Systolic.DraftUI/Systolic.DraftUI.csproj" />
+        <entry key="Systolic.DraftUI/Views/Nodes/CollectorNodeView.axaml" value="Systolic.DraftUI/Systolic.DraftUI.csproj" />
+        <entry key="Systolic.DraftUI/Views/Nodes/EllipseView.axaml" value="Systolic.DraftUI/Systolic.DraftUI.csproj" />
+        <entry key="Systolic.DraftUI/Views/Nodes/InputSourceNodeView.axaml" value="Systolic.DraftUI/Systolic.DraftUI.csproj" />
+        <entry key="Systolic.DraftUI/Views/Nodes/SignalView.axaml" value="Systolic.DraftUI/Systolic.DraftUI.csproj" />
+        <entry key="Systolic.DraftUI/Views/Nodes/SystolicNodeView.axaml" value="Systolic.DraftUI/Systolic.DraftUI.csproj" />
+        <entry key="Systolic.UI/App.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Controls/Implementations/Pin.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Themes/TemplatedControl1.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Views/MainView.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Views/MainWindow.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Views/MenuView.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Views/Nodes/AndGateView.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Views/Nodes/CollectorNodeView.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Views/Nodes/InputSourceNodeView.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Views/Nodes/OrGateView.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Views/Nodes/RectangleView.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Views/Nodes/SystolicNode.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Views/Nodes/SystolicNodeView.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Views/Nodes/UserControl1.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Views/Pin.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

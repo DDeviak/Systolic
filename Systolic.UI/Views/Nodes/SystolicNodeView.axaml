@@ -1,0 +1,47 @@
+<UserControl
+    d:DesignHeight="60"
+    d:DesignWidth="60"
+    mc:Ignorable="d"
+    x:Class="Systolic.UI.Views.Nodes.SystolicNodeView"
+    x:DataType="nodes:SystolicNodeViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:nodes="clr-namespace:Systolic.UI.ViewModels.Nodes"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.DataContext>
+        <nodes:SystolicNodeViewModel />
+    </Design.DataContext>
+    <UserControl.Styles>
+        <Style Selector="Label">
+            <Setter Property="Padding" Value="2,0" />
+            <Setter Property="FontSize" Value="10" />
+        </Style>
+    </UserControl.Styles>
+    <Panel>
+        <Panel.ContextFlyout>
+            <Flyout>
+                <DockPanel Width="200">
+                    <Label Content="Hello" DockPanel.Dock="Top" />
+                </DockPanel>
+            </Flyout>
+        </Panel.ContextFlyout>
+        <Rectangle Classes="node" />
+        <StackPanel
+            Orientation="Vertical"
+            Spacing="0"
+            VerticalAlignment="Center">
+            <ItemsRepeater ItemsSource="{Binding Registers}">
+                <ItemsRepeater.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <Label Content="{Binding Key}" />
+                            <Label Content=":" />
+                            <Label Content="{Binding Value}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsRepeater.ItemTemplate>
+            </ItemsRepeater>
+        </StackPanel>
+    </Panel>
+</UserControl>
