@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using Avalonia;
 using Avalonia.Data.Converters;
@@ -24,7 +25,7 @@ public class NumberCollectionConverter : IValueConverter
 		if (value is string text)
 		{
 			var parts = text.Split(Separator.Trim(), StringSplitOptions.RemoveEmptyEntries);
-			var numbers = new List<double>();
+			var numbers = new ObservableCollection<double>();
 			foreach (var part in parts)
 				if (double.TryParse(part.Trim(), out var number))
 					numbers.Add(number);

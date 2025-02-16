@@ -26,10 +26,14 @@
 
         <FluentTheme />
 
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
+
         <StyleInclude Source="avares://NodeEditorAvalonia/Themes/NodeEditorTheme.axaml" />
 
         <StyleInclude Source="avares://Systolic.UI/Styles/Nodes.axaml" />
         <StyleInclude Source="avares://Systolic.UI/Styles/Icons.axaml" />
+
+        <StyleInclude Source="avares://Systolic.UI/Themes/ThemeOverrides.axaml" />
 
         <Style Selector="MenuItem /template/ ContentPresenter#PART_IconPresenter">
             <Setter Property="Width" Value="20" />

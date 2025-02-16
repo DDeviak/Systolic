@@ -1,17 +1,26 @@
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Avalonia.Collections;
+using System.Linq;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Systolic.Core.Abstractions;
+using Systolic.UI.Models.Implementations;
 
 namespace Systolic.UI.ViewModels.Nodes;
 
-public class CollectorNodeViewModel : ViewModelBase, INode<double>
+public partial class CollectorNodeViewModel : ViewModelBase, INode<double>
 {
-	public AvaloniaDictionary<string, IList<double>> Registers { get; } = new();
+	[ObservableProperty]
+	private ObservableCollection<ObservableKeyValuePair<string, ObservableCollection<double>>> _registers = new();
 
 	public void SetRegister(string registerName, double value)
 	{
-		if (!Registers.ContainsKey(registerName)) Registers[registerName] = new ObservableCollection<double>();
-		Registers[registerName].Add(value);
+		if (Registers.All(t => t.Key != registerName))
+		{
+			var newCollection = new ObservableCollection<double>();
+			var pair = new ObservableKeyValuePair<string, ObservableCollection<double>>(registerName, newCollection);
+			newCollection.CollectionChanged += (sender, args) => { Registers[Registers.IndexOf(pair)] = pair; };
+			Registers.Add(pair);
+		}
+
+		Registers.First(t => t.Key == registerName).Value.Add(value);
 	}
 }

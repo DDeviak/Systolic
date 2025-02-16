@@ -13,7 +13,12 @@
         <entry key="Systolic.DraftUI/Views/Nodes/SystolicNodeView.axaml" value="Systolic.DraftUI/Systolic.DraftUI.csproj" />
         <entry key="Systolic.UI/App.axaml" value="Systolic.UI/Systolic.UI.csproj" />
         <entry key="Systolic.UI/Controls/Implementations/Pin.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Styles/Nodes.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Styles/Themes.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Themes/Overrides/Pin.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Themes/Pin.axaml" value="Systolic.UI/Systolic.UI.csproj" />
         <entry key="Systolic.UI/Themes/TemplatedControl1.axaml" value="Systolic.UI/Systolic.UI.csproj" />
+        <entry key="Systolic.UI/Themes/ThemeOverrides.axaml" value="Systolic.UI/Systolic.UI.csproj" />
         <entry key="Systolic.UI/Views/MainView.axaml" value="Systolic.UI/Systolic.UI.csproj" />
         <entry key="Systolic.UI/Views/MainWindow.axaml" value="Systolic.UI/Systolic.UI.csproj" />
         <entry key="Systolic.UI/Views/MenuView.axaml" value="Systolic.UI/Systolic.UI.csproj" />

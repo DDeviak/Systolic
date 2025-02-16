@@ -1,0 +1,53 @@
+﻿<ResourceDictionary
+    x:CompileBindings="True"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:overrides="clr-namespace:Systolic.UI.ViewModels.Overrides"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTheme TargetType="Pin" x:Key="{x:Type Pin}">
+
+        <Setter Property="Margin" Value="{Binding $self, Converter={x:Static PinMarginConverter.Instance}}" />
+        <Setter Property="ClipToBounds" Value="False" />
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Ellipse
+                    Height="{Binding Height, RelativeSource={RelativeSource TemplatedParent}}"
+                    Width="{Binding Width, RelativeSource={RelativeSource TemplatedParent}}"
+                    x:Name="PART_Pin" />
+            </ControlTemplate>
+        </Setter>
+
+        <Setter Property="(ToolTip.Tip)">
+            <Template>
+                <TextBlock Text="{Binding $parent[Pin].Id}" />
+            </Template>
+        </Setter>
+
+        <Setter Property="ContextFlyout">
+            <Setter.Value>
+                <Flyout>
+                    <DockPanel DataContext="{Binding $parent[Pin].PinSource}"
+                               x:DataType="overrides:ExtendedPinViewModel">
+                        <Label Content="Name:" DockPanel.Dock="Top" />
+                        <TextBlock DockPanel.Dock="Top" Text="{ReflectionBinding Name}" />
+                        <Label Content="Type:" DockPanel.Dock="Top" />
+                        <TextBlock DockPanel.Dock="Top" Text="{Binding PinType}" />
+                    </DockPanel>
+                </Flyout>
+            </Setter.Value>
+        </Setter>
+
+        <Style Selector="^/template/ Ellipse#PART_Pin">
+            <Setter Property="Fill" Value="{DynamicResource PinBackgroundBrush}" />
+            <Setter Property="Stroke" Value="{DynamicResource PinForegroundBrush}" />
+            <Setter Property="StrokeThickness" Value="2" />
+        </Style>
+
+        <Style Selector="^:pointerover /template/ Ellipse#PART_Pin">
+            <Setter Property="Fill" Value="{DynamicResource PinPointerOverBackgroundBrush}" />
+            <Setter Property="Stroke" Value="{DynamicResource PinPointerOverForegroundBrush}" />
+            <Setter Property="StrokeThickness" Value="2" />
+        </Style>
+
+    </ControlTheme>
+</ResourceDictionary>

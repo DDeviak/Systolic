@@ -22,26 +22,21 @@
         <Panel.ContextFlyout>
             <Flyout>
                 <DockPanel Width="200">
-                    <Label Content="Hello" DockPanel.Dock="Top" />
+                    <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding Registers}" />
                 </DockPanel>
             </Flyout>
         </Panel.ContextFlyout>
         <Rectangle Classes="node" />
-        <StackPanel
-            Orientation="Vertical"
-            Spacing="0"
-            VerticalAlignment="Center">
-            <ItemsRepeater ItemsSource="{Binding Registers}">
-                <ItemsRepeater.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                            <Label Content="{Binding Key}" />
-                            <Label Content=":" />
-                            <Label Content="{Binding Value}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsRepeater.ItemTemplate>
-            </ItemsRepeater>
-        </StackPanel>
+        <ItemsControl ItemsSource="{Binding Registers}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <Label Content="{Binding Key}" />
+                        <Label Content=":" />
+                        <Label Content="{Binding Value}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Panel>
 </UserControl>

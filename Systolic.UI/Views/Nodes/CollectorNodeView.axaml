@@ -5,6 +5,7 @@
     x:Class="Systolic.UI.Views.Nodes.CollectorNodeView"
     x:DataType="nodes:CollectorNodeViewModel"
     xmlns="https://github.com/avaloniaui"
+    xmlns:converters="clr-namespace:Systolic.UI.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:nodes="clr-namespace:Systolic.UI.ViewModels.Nodes"
@@ -22,26 +23,30 @@
         <Panel.ContextFlyout>
             <Flyout>
                 <DockPanel Width="200">
-                    <Label Content="Hello" DockPanel.Dock="Top" />
+                    <DataGrid IsReadOnly="True" ItemsSource="{Binding Registers}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Key}" Header="Register" />
+                            <DataGridTextColumn Binding="{Binding Value, Converter={x:Static converters:NumberCollectionConverter.Instance}}" Header="Values" />
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </DockPanel>
             </Flyout>
         </Panel.ContextFlyout>
         <Rectangle Classes="node" />
-        <StackPanel
-            Orientation="Vertical"
-            Spacing="0"
-            VerticalAlignment="Center">
-            <ItemsRepeater ItemsSource="{Binding Registers}">
-                <ItemsRepeater.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                            <Label Content="{Binding Key}" />
-                            <Label Content=":" />
-                            <Label Content="{Binding Value}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsRepeater.ItemTemplate>
-            </ItemsRepeater>
-        </StackPanel>
+        <TextBlock
+            HorizontalAlignment="Center"
+            IsVisible="{Binding Registers.Count, Converter={x:Static BoolConverters.Not}}"
+            Text="Collector" />
+        <ItemsControl ItemsSource="{Binding Registers}" VerticalAlignment="Center">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <Label Content="{Binding Key}" />
+                        <Label Content=":" />
+                        <Label Content="{Binding Value, Converter={x:Static converters:NumberCollectionConverter.Instance}}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Panel>
 </UserControl>

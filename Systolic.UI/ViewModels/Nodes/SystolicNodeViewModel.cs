@@ -1,49 +1,42 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using Avalonia.Collections;
 using CommunityToolkit.Mvvm.ComponentModel;
 using NodeEditor.Model;
 using Systolic.Core.Abstractions;
+using Systolic.UI.Models.Implementations;
+using Systolic.UI.ViewModels.Overrides;
 
 namespace Systolic.UI.ViewModels.Nodes;
 
 public partial class SystolicNodeViewModel : ViewModelBase, IProcessingNode<double>
 {
-	private Dictionary<string, INode<double>> _links = null!;
+	[ObservableProperty] private AvaloniaDictionary<string, double> _inputRegisters = new();
+	[ObservableProperty] private INode? _parent;
 
-	private Dictionary<string, Func<Dictionary<string, double>, double>> _operations = null!;
+	[ObservableProperty] private IList<IPin> _pins;
 
-	[ObservableProperty] public IList<IPin> _pins;
+	[ObservableProperty] private ObservableCollection<ObservableKeyValuePair<string, double>> _registers =
+		new();
+
+	public SystolicNodeViewModel() : this(["A", "B", "C"])
+	{
+	}
 
 	public SystolicNodeViewModel(IEnumerable<string> registerNames)
 	{
-		Registers = new Dictionary<string, double>();
-		InputRegisters = new Dictionary<string, double>();
 		foreach (var registerName in registerNames)
 		{
-			Registers[registerName] = default!;
+			Registers.Add(new ObservableKeyValuePair<string, double>(registerName, default!));
 			InputRegisters[registerName] = default!;
 			Operations[registerName] = inputRegisters => inputRegisters[registerName];
 		}
 	}
 
-	public ObservableCollection<KeyValuePair<string, double>> RegistersList => null!;
-
-	protected Dictionary<string, double> Registers { get; }
-
-	protected Dictionary<string, double> InputRegisters { get; }
-
-	public Dictionary<string, Func<Dictionary<string, double>, double>> Operations
-	{
-		get => _operations ??= new Dictionary<string, Func<Dictionary<string, double>, double>>();
-		set => _operations = value ?? new Dictionary<string, Func<Dictionary<string, double>, double>>();
-	}
-
-	public Dictionary<string, INode<double>> Links
-	{
-		get => _links ??= new Dictionary<string, INode<double>>();
-		set => _links = value ?? new Dictionary<string, INode<double>>();
-	}
+	private Dictionary<string, Func<IDictionary<string, double>, double>> Operations { get; } =
+		new();
 
 	public void SetRegister(string registerName, double value)
 	{
@@ -52,21 +45,17 @@ public partial class SystolicNodeViewModel : ViewModelBase, IProcessingNode<doub
 
 	public void PerformOperations()
 	{
-		foreach (var operation in Operations) Registers[operation.Key] = operation.Value(InputRegisters);
+		foreach (var register in Registers) register.Value = Operations[register.Key](InputRegisters);
 	}
 
 	public void ShiftRegisters()
 	{
-		foreach (var link in Links) link.Value?.SetRegister(link.Key, Registers[link.Key]);
+		foreach (var link in Pins.OfType<ExtendedPinViewModel>().Where(t => t.PinType == PinType.Output))
+			link.SetRegister(link.Name!, Registers.First(t => t.Key == link.Name!).Value);
 	}
 
 	public void ResetRegisters()
 	{
 		foreach (var register in InputRegisters) InputRegisters[register.Key] = default!;
-	}
-
-	public double GetRegister(string registerName)
-	{
-		return Registers[registerName];
 	}
 }

@@ -157,10 +157,7 @@ public class NodeFactory : INodeFactory
 			Content = new InputSourceNodeViewModel()
 		};
 
-		node.BindTwoWay(node.Content as InputSourceNodeViewModel, vm => vm.Pins,
-			vm => vm.Pins);
-
-		node.AddPin(0, height / 2, pinSize, pinSize, PinAlignment.Left, "A", PinType.Output);
+		(node.Content as InputSourceNodeViewModel).Parent = node;
 
 		return node;
 	}

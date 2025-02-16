@@ -24,7 +24,7 @@ public class ExtendedPinViewModel : PinViewModel, INode<double>
 		if (PinType == PinType.None) return;
 		if (PinType == PinType.Input) Node ??= Parent!.Content as INode<double>;
 
-		Node!.SetRegister(registerName, value);
+		Node?.SetRegister(registerName, value);
 	}
 
 	protected IPin GetOtherSide(IConnector connector)
