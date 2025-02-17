@@ -26,8 +26,7 @@
         <Setter Property="ContextFlyout">
             <Setter.Value>
                 <Flyout>
-                    <DockPanel DataContext="{Binding $parent[Pin].PinSource}"
-                               x:DataType="overrides:ExtendedPinViewModel">
+                    <DockPanel DataContext="{Binding $parent[Pin].PinSource}" x:DataType="overrides:ExtendedPinViewModel">
                         <Label Content="Name:" DockPanel.Dock="Top" />
                         <TextBlock DockPanel.Dock="Top" Text="{ReflectionBinding Name}" />
                         <Label Content="Type:" DockPanel.Dock="Top" />

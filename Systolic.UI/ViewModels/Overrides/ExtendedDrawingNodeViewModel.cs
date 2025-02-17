@@ -12,6 +12,7 @@ namespace Systolic.UI.ViewModels.Overrides;
 public partial class ExtendedDrawingNodeViewModel : NodeViewModel, IDrawingNode
 {
 	private readonly DrawingNodeEditor _editor;
+	[ObservableProperty] private RunnerViewModel _runnerViewModel;
 	[ObservableProperty] private IList<IConnector>? _connectors;
 	[ObservableProperty] private IList<INode>? _nodes;
 	private ISet<IConnector>? _selectedConnectors;
@@ -28,6 +29,8 @@ public partial class ExtendedDrawingNodeViewModel : NodeViewModel, IDrawingNode
 		_editor = new DrawingNodeEditor(this, drawingNodeFactory);
 
 		_settings = new DrawingNodeSettingsViewModel();
+		
+		RunnerViewModel = new RunnerViewModel();
 
 		CutNodesCommand = new RelayCommand(CutNodes);
 

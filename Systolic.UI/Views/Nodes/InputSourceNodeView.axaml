@@ -49,14 +49,12 @@
                             <DataGridTemplateColumn Header="Values">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock
-                                            Text="{Binding Value, Converter={x:Static converters:NumberCollectionConverter.Instance}}" />
+                                        <TextBlock Text="{Binding Value, Converter={x:Static converters:NumberCollectionConverter.Instance}}" />
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                                 <DataGridTemplateColumn.CellEditingTemplate>
                                     <DataTemplate>
-                                        <TextBox
-                                            Text="{Binding Value, Mode=TwoWay, Converter={x:Static converters:NumberCollectionConverter.Instance}}" />
+                                        <TextBox Text="{Binding Value, Mode=TwoWay, Converter={x:Static converters:NumberCollectionConverter.Instance}}" />
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellEditingTemplate>
                             </DataGridTemplateColumn>
@@ -76,8 +74,7 @@
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                         <Label Content="{Binding Key}" />
                         <Label Content=":" />
-                        <Label
-                            Content="{Binding Value, Converter={x:Static converters:NumberCollectionConverter.Instance}}" />
+                        <Label Content="{Binding Value, Converter={x:Static converters:NumberCollectionConverter.Instance}}" />
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

@@ -10,24 +10,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d18a847f-568a-4ec4-8f54-909840e38b3c" name="Changes" comment="Added a lot of stuff, Barely working ;)">
-      <change afterPath="$PROJECT_DIR$/Systolic.UI/Themes/Overrides/Pin.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Systolic.UI/Themes/ThemeOverrides.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Systolic.UI/ViewModels/Nodes/IInputProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Systolic/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Systolic/.idea/avalonia.xml" afterDir="false" />
+    <list default="true" id="d18a847f-568a-4ec4-8f54-909840e38b3c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Systolic.UI/ViewModels/RunnerViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Systolic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Systolic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systolic.UI/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/App.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systolic.UI/Converters/NumberCollectionConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/Converters/NumberCollectionConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systolic.UI/Services/DrawingNodeFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/Services/DrawingNodeFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systolic.UI/Services/NodeFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/Services/NodeFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systolic.UI/Systolic.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/Systolic.UI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systolic.UI/ViewModels/Nodes/CollectorNodeViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/ViewModels/Nodes/CollectorNodeViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systolic.UI/ViewModels/Nodes/InputSourceNodeViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/ViewModels/Nodes/InputSourceNodeViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systolic.UI/ViewModels/Nodes/SystolicNodeViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/ViewModels/Nodes/SystolicNodeViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systolic.UI/ViewModels/Overrides/ExtendedPinViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/ViewModels/Overrides/ExtendedPinViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systolic.UI/Views/Nodes/CollectorNodeView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/Views/Nodes/CollectorNodeView.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systolic.UI/Themes/Overrides/Pin.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/Themes/Overrides/Pin.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systolic.UI/ViewModels/Overrides/ExtendedDrawingNodeViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/ViewModels/Overrides/ExtendedDrawingNodeViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systolic.UI/Views/MainView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/Views/MainView.axaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Systolic.UI/Views/Nodes/InputSourceNodeView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/Views/Nodes/InputSourceNodeView.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systolic.UI/Views/Nodes/SystolicNodeView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/Systolic.UI/Views/Nodes/SystolicNodeView.axaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +51,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3f6b98a900fd459494cd5c94edc67538e400/07/1409393f/INotifyPropertyChanged.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/11024d1fbdcbfd8d2c1938332f2687d8bfbf3e375c37b5adf24ace4f0be35/PinViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/12728b48859e5c339bb7819b9a9aedc55b0201e8e99c0f32215f4cca043287/CastHelpers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1624c43155e28b5b8eeaea40ce16748f9da46d9e/Systolic.UI.ViewModels.Nodes.SystolicNodeViewModel.g.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1c9517d527f614396dfa453346e69acfefb958c4c59d7fbef256bbab3538d/ArgumentNullException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1d44b9ce7e187bf3a6c2dbea4afc0bb9d3dfdd19e0cc4ef96c9ddd57b23dd3/DataGrid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/27933ad824218eaf3f4b5f42574cddb3f1cd9d8/NodeEditor.Mvvm.PinViewModel.g.cs" root0="FORCE_HIGHLIGHTING" />
@@ -72,10 +62,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/34751d58ce7eafd3246b0d2563cfe3ae246831808e7f7782f1ed60173616c8/AvaloniaDictionary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3e432edeee9469b7cfdb81d6e6bd278cf57afb9e54ab75649b8bb2f52cdde69/ObservableObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3fb729f7cd03ae7d4aee139762317588c8e3e/Systolic.UI.ViewModels.Nodes.CollectorNodeViewModel.g.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4321b79f71a73991968e10db30874a4ace15803e892be061fc3b6752d16477/IDrawingNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4f93527646dc8e87609d2f2df432a8a9e62ae3eac3db84582ddf7cd9c732f9d/Editor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/52cdab2b2b25c597d6906a9f7d17fb88de776b28/Systolic.UI.ViewModels.Nodes.InputSourceNodeViewModel.g.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6620d3857c4a923cd19da979c060c628b34b3f77f73a7159d7ac286e682/X11PlatformThreading.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6780d13016c376c4491c5618b257d84da7eacf747ed2719783e775546b79b/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/689119283c521e347a9f2e6bd3f32dc43279cd58790a296b79a15d75eca44fe/NonRandomizedStringEqualityComparer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/68b06b8592b1287fd78f3ee68566d6a38d6e2f45b9a9e6ebd4d0e9972f7c29/Object.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/693e634d7742afaf486acd69d84fe2a9e1ee1b11ba84f29cd1d67668d20dd59/Thread.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6cb570785fb0b99a8397a19a60fec0ae16ed9114e31da2af4c88648319857ea/PointerEventArgs.cs" root0="FORCE_HIGHLIGHTING" />
@@ -92,7 +84,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9f9a2bceaa5614134b985ff3cf8e75e9763fc96d24b8d55a73df638444d4a0/MethodCommandNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a61d2ff2f09aa53b328582d43b6b668dcdd4dad5aa06d67629cae779ff98022/KeyedCollection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/acabf2aa276c1f1cf96cb06a312b3a0deaa3f7c5411c2721be296de76a92d/EqualityComparer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b26f9aaab1faf3c13e9ecb68663334b4c7b2517e831b9bc3d1d953c5b7a8d21/RuntimeHelpers.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b48178b0dbc4487010e647267312f441ef63a824d42089848113ae893e72fc90/ObservableCollection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b5a7f3f816db15737a7436abd1edf8e9d76eafb/NodeEditor.Mvvm.EditorViewModel.g.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b6cbf62d3eabfc893330f91b92905afa4356c8b6c1dba15e10b4a8f4c932372/WeakReference.T.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cea453f42fa33cafd0d8c0432d63531abc421ee9586956232e4c8675b7a021/NodeViewModelExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d489993b8fc9365570606c70f16434c231dcefac791e28ff71514c948d0/StyledElement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -100,15 +94,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e62915fc85b59e92c59f0f0e3c917824f9ec7bc/Systolic.UI.ViewModels.Nodes.InputSourceNodeViewModel.g.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e747192abb38e2df82cbdb37e721567726f559914a7b81f8b26ba537de632f4/List.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f088aefdb85a3bd9c441dba3f576fa9a6e3623a9392cdc8f85eadd962a7716/WeakEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f29dce16548d844aa451fc5c91da1652bb751fdf07f5346dbfd4bda3daaaaf/EditorViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fdd9fac39cc81e99b171711177d50cbd8a3d582/NodeEditor.Mvvm.EditorViewModel.g.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fee7df732645b1b319cb95be43b93c4b93a41792b5cabbf48dde75512d8fa9e/StyleChildren.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ff41493cf8b0b65b56132bfadca6ecb54c3bee8f8ef67521758f1291d9ce0c5/PropertyChangedEventArgs.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ffdf3142c2ac554b4df1d84447346c49ebb34519635325e8d12f8544ee743bc/CollectionChangedEventManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Systolic.UI/App.axaml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/deviak/Desktop/Systolic/Systolic.UI/Converters/NumberCollectionConverter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/deviak/Desktop/Systolic/Systolic.UI/Services/DrawingNodeFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Systolic.UI/Services/NodeFactory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/deviak/Desktop/Systolic/Systolic.UI/Services/NodeFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Systolic.UI/Services/NodeViewModelExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Systolic.UI/ViewModels/Nodes/CollectorNodeViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Systolic.UI/ViewModels/Nodes/InputSourceNodeViewModel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -117,7 +109,6 @@
     <setting file="file://$PROJECT_DIR$/Systolic.UI/Views/Nodes/CollectorNodeView.axaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Systolic.UI/Views/Nodes/InputSourceNodeView.axaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Systolic.UI/Views/Nodes/SystolicNodeView.axaml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file:///tmp/JetBrainsPerUserTemp-1000-1/SourceGeneratedDocuments/C8E6CEEC79A784050AC5D930/CommunityToolkit.Mvvm.SourceGenerators/CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator/Systolic.UI.ViewModels.Nodes.InputSourceNodeViewModel.g.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -255,7 +246,8 @@
       <workItem from="1739395069875" duration="2664000" />
       <workItem from="1739562559233" duration="9568000" />
       <workItem from="1739646801998" duration="13317000" />
-      <workItem from="1739702556068" duration="21450000" />
+      <workItem from="1739702556068" duration="27428000" />
+      <workItem from="1739773801866" duration="39000" />
     </task>
     <task id="LOCAL-00001" summary="Added a lot of stuff, Barely working ;)">
       <option name="closed" value="true" />
@@ -265,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739231895997</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactor node view models and UI components; enhance data binding and input handling">
+      <option name="closed" value="true" />
+      <created>1739739970022</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739739970022</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +287,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Added a lot of stuff, Barely working ;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a lot of stuff, Barely working ;)" />
+    <MESSAGE value="Refactor node view models and UI components; enhance data binding and input handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor node view models and UI components; enhance data binding and input handling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
