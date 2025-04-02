@@ -154,27 +154,33 @@
                     TemplatesSource="{Binding Editor.Templates}" />
                 <Grid
                     ColumnDefinitions="*,*,*"
-                    DataContext="{Binding Editor.Drawing}"
+                    DataContext="{Binding Editor.ExtendedDrawing.RunnerViewModel}"
                     DockPanel.Dock="Bottom"
                     Margin="8"
                     RowDefinitions="*,*"
                     VerticalAlignment="Bottom">
                     <Button
+                        Command="{Binding Start}"
                         Content="Start"
                         Grid.Column="0"
                         Grid.Row="" />
                     <Button
+                        Command="{Binding Stop}"
                         Content="Stop"
                         Grid.Column="1"
                         Grid.Row="" />
                     <Button
+                        Command="{Binding Step}"
                         Content="Step"
                         Grid.Column="2"
                         Grid.Row="" />
                     <Slider
                         Grid.Column="0"
                         Grid.ColumnSpan="3"
-                        Grid.Row="1" />
+                        Grid.Row="1"
+                        Maximum="1000"
+                        Minimum="0"
+                        Value="{Binding StepDelay}" />
                 </Grid>
             </DockPanel>
             <ThemeVariantScope

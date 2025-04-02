@@ -21,13 +21,32 @@
     <Panel>
         <Panel.ContextFlyout>
             <Flyout>
-                <DockPanel Width="200">
-                    <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding Registers}" />
-                </DockPanel>
+                <Grid ColumnDefinitions="*,60,*" RowDefinitions="*,100">
+                    <TextBox
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        x:Name="TextBox" />
+                    <Button
+                        Command="{Binding AddRegister}"
+                        CommandParameter="{Binding ElementName=TextBox, Path=Text}"
+                        Grid.Column="2"
+                        Grid.Row="0"
+                        HorizontalAlignment="Right"
+                        IsDefault="True">
+                        Add Input
+                    </Button>
+                    <DataGrid
+                        AutoGenerateColumns="True"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Grid.Row="1"
+                        ItemsSource="{Binding Registers}"
+                        VerticalScrollBarVisibility="Hidden" />
+                </Grid>
             </Flyout>
         </Panel.ContextFlyout>
         <Rectangle Classes="node" />
-        <ItemsControl ItemsSource="{Binding Registers}">
+        <ItemsControl ItemsSource="{Binding Registers}" VerticalAlignment="Center">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">

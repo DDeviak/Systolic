@@ -42,13 +42,8 @@ public partial class InputSourceNodeViewModel : ViewModelBase, IInputProvider
 			var pair = new ObservableKeyValuePair<string, ObservableCollection<double>>(inputName, collection);
 			Inputs.Add(pair);
 
-			var gap = Parent.Height / (Inputs.Count + 1);
-			for (var i = 0; i < Parent.Pins.Count; i++) Parent.Pins[i].Y = gap * (i + 1);
-
-			(Parent as NodeViewModel).AddPin(0, gap * Inputs.Count, 10, 10, PinAlignment.Left, inputName,
+			(Parent as NodeViewModel)!.AddPin(0, 0, 10, 10, PinAlignment.Left, inputName,
 				PinType.Output);
-
-			Parent.Pins = Parent.Pins;
 		}
 	}
 }

@@ -12,12 +12,13 @@ using CommunityToolkit.Mvvm.Input;
 using NodeEditor.Controls;
 using NodeEditor.Mvvm;
 using Systolic.UI.Services;
+using Systolic.UI.ViewModels.Overrides;
 
 namespace Systolic.UI.ViewModels;
 
 public partial class MainViewViewModel : ViewModelBase
 {
-	[ObservableProperty] private EditorViewModel? _editor;
+	[ObservableProperty] private ExtendedEditorViewModel? _editor;
 	[ObservableProperty] private bool _isToolboxVisible;
 
 	public MainViewViewModel()

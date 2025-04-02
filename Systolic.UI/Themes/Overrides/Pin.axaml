@@ -1,6 +1,8 @@
 ﻿<ResourceDictionary
     x:CompileBindings="True"
     xmlns="https://github.com/avaloniaui"
+    xmlns:converters="clr-namespace:Systolic.UI.Converters"
+    xmlns:m="clr-namespace:NodeEditor.Model;assembly=NodeEditorAvalonia.Model"
     xmlns:overrides="clr-namespace:Systolic.UI.ViewModels.Overrides"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ControlTheme TargetType="Pin" x:Key="{x:Type Pin}">
@@ -31,6 +33,27 @@
                         <TextBlock DockPanel.Dock="Top" Text="{ReflectionBinding Name}" />
                         <Label Content="Type:" DockPanel.Dock="Top" />
                         <TextBlock DockPanel.Dock="Top" Text="{Binding PinType}" />
+                        <Label Content="Alignment:" DockPanel.Dock="Top" />
+                        <RadioButton
+                            Content="Left"
+                            DockPanel.Dock="Top"
+                            GroupName="Alignment"
+                            IsChecked="{Binding Alignment, Converter={x:Static converters:EnumToCheckedConverter.Instance}, ConverterParameter={x:Static m:PinAlignment.Left}}" />
+                        <RadioButton
+                            Content="Right"
+                            DockPanel.Dock="Top"
+                            GroupName="Alignment"
+                            IsChecked="{Binding Alignment, Converter={x:Static converters:EnumToCheckedConverter.Instance}, ConverterParameter={x:Static m:PinAlignment.Right}}" />
+                        <RadioButton
+                            Content="Top"
+                            DockPanel.Dock="Top"
+                            GroupName="Alignment"
+                            IsChecked="{Binding Alignment, Converter={x:Static converters:EnumToCheckedConverter.Instance}, ConverterParameter={x:Static m:PinAlignment.Top}}" />
+                        <RadioButton
+                            Content="Bottom"
+                            DockPanel.Dock="Top"
+                            GroupName="Alignment"
+                            IsChecked="{Binding Alignment, Converter={x:Static converters:EnumToCheckedConverter.Instance}, ConverterParameter={x:Static m:PinAlignment.Bottom}}" />
                     </DockPanel>
                 </Flyout>
             </Setter.Value>

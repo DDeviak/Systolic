@@ -1,0 +1,37 @@
+<ResourceDictionary
+    x:CompileBindings="True"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:controls="clr-namespace:Systolic.UI.Controls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTheme TargetType="Node" x:Key="{x:Type Node}">
+
+        <Setter Property="ClipToBounds" Value="False" />
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel Height="{Binding NodeSource.Height, RelativeSource={RelativeSource TemplatedParent}}" Width="{Binding NodeSource.Width, RelativeSource={RelativeSource TemplatedParent}}">
+                    <ContentPresenter
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        Padding="{TemplateBinding Padding}"
+                        RecognizesAccessKey="True"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                        x:Name="PART_ContentPresenter" />
+                    <controls:ExtendedPins
+                        Height="{Binding NodeSource.Height, RelativeSource={RelativeSource TemplatedParent}}"
+                        NodeSource="{Binding NodeSource, RelativeSource={RelativeSource TemplatedParent}}"
+                        Width="{Binding NodeSource.Width, RelativeSource={RelativeSource TemplatedParent}}"
+                        x:Name="PART_Pins" />
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+
+    </ControlTheme>
+
+</ResourceDictionary>

@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Linq;
 using NodeEditor.Model;
 using NodeEditor.Mvvm;
-using ReactiveMarbles.PropertyChanged;
 using Systolic.UI.ViewModels.Nodes;
 using Systolic.UI.ViewModels.Overrides;
 
@@ -95,7 +93,6 @@ public class NodeFactory : INodeFactory
 	}
 
 	internal static INode CreateSystolicNode(double x, double y, double width = 60, double height = 60,
-		IEnumerable<string> registers = null!,
 		double pinSize = 10, string name = "PE")
 	{
 		var node = new NodeViewModel
@@ -106,21 +103,10 @@ public class NodeFactory : INodeFactory
 			Width = width,
 			Height = height,
 			Pins = new ObservableCollection<IPin>(),
-			Content = new SystolicNodeViewModel(registers ??= ["A", "B", "C"])
+			Content = new SystolicNodeViewModel()
 		};
 
-		node.BindOneWay(node.Content as SystolicNodeViewModel, vm => vm.Pins,
-			vm => vm.Pins);
-
-		var spacing = height / (registers.Count() + 1);
-		var position = spacing;
-
-		foreach (var register in registers)
-		{
-			node.AddPin(0, position, pinSize, pinSize, PinAlignment.Left, register, PinType.Input);
-			node.AddPin(width, position, pinSize, pinSize, PinAlignment.Right, register, PinType.Output);
-			position += spacing;
-		}
+		(node.Content as SystolicNodeViewModel).Parent = node;
 
 		return node;
 	}

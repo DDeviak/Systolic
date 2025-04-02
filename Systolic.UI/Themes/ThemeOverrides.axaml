@@ -3,6 +3,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="avares://Systolic.UI/Themes/Overrides/Pin.axaml" />
+                <ResourceInclude Source="avares://Systolic.UI/Themes/Overrides/Node.axaml" />
+                <ResourceInclude Source="avares://Systolic.UI/Themes/Overrides/Pins.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>

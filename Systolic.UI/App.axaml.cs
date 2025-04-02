@@ -2,9 +2,9 @@ using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using NodeEditor.Mvvm;
 using Systolic.UI.Services;
 using Systolic.UI.ViewModels;
+using Systolic.UI.ViewModels.Overrides;
 using Systolic.UI.Views;
 
 namespace Systolic.UI;
@@ -27,7 +27,7 @@ public class App : Application
 			IsToolboxVisible = true
 		};
 
-		var editor = new EditorViewModel
+		var editor = new ExtendedEditorViewModel()
 		{
 			Serializer = new NodeSerializer(typeof(ObservableCollection<>)),
 			Factory = new NodeFactory()

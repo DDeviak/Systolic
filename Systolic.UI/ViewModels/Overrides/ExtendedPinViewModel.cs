@@ -36,9 +36,8 @@ public class ExtendedPinViewModel : PinViewModel, INode<double>
 	{
 		if (PinType == PinType.Output && GetOtherSide(connector) is ExtendedPinViewModel otherSide)
 		{
-			if (Node is not MulticastNode<double>) Node = new MulticastNode<double>();
+			if (Node is not MulticastNode<double> node) Node = node = new MulticastNode<double>();
 
-			var node = (Node as MulticastNode<double>)!;
 			if (!node.Links.ContainsKey(Name!)) node.Links[Name!] = new List<INode<double>>();
 			if (!node.Links[Name!].Contains(otherSide)) node.Links[Name!].Add(otherSide);
 		}

@@ -9,7 +9,7 @@ namespace Systolic.UI.Converters;
 
 public class NumberCollectionConverter : IValueConverter
 {
-	public static NumberCollectionConverter Instance = new();
+	public static readonly NumberCollectionConverter Instance = new();
 
 	public string Separator { get; set; } = ", ";
 

@@ -1,4 +1,4 @@
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -9,8 +9,8 @@ namespace Systolic.UI.ViewModels;
 
 public partial class RunnerViewModel : ViewModelBase
 {
-	[ObservableProperty] ObservableCollection<IProcessingNode<double>> _nodes = new();
-	[ObservableProperty] ObservableCollection<IInputProvider> _inputProviders = new();
+	[ObservableProperty] IEnumerable<IProcessingNode<double>> _nodes;
+	[ObservableProperty] IEnumerable<IInputProvider> _inputProviders;
 
 	[ObservableProperty] private bool _isRunning;
 	[ObservableProperty] private int _stepDelay = 100;
@@ -20,14 +20,15 @@ public partial class RunnerViewModel : ViewModelBase
 	[RelayCommand]
 	public void Start()
 	{
-		_runnerTask = Task.Run(InnerTask);
+		IsRunning = true;
+		_runnerTask = InnerTask();
 	}
 	
 	[RelayCommand]
 	public void Stop()
 	{
 		IsRunning = false;
-		_runnerTask.Wait();
+		Task.Run(async () => await _runnerTask);
 		_runnerTask = null;
 	}
 	
@@ -50,12 +51,12 @@ public partial class RunnerViewModel : ViewModelBase
 		}
 	}
 	
-	private void InnerTask()
+	private async Task InnerTask()
 	{
 		while (IsRunning)
 		{
 			Step();
-			Task.Delay(StepDelay);
+			await Task.Delay(StepDelay);
 		}
 	}
 }

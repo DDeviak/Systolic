@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using NodeEditor.Model;
 using NodeEditor.Mvvm;
+using Systolic.Core.Abstractions;
+using Systolic.UI.ViewModels.Nodes;
 
 namespace Systolic.UI.ViewModels.Overrides;
 
@@ -45,6 +48,17 @@ public partial class ExtendedDrawingNodeViewModel : NodeViewModel, IDrawingNode
 		DeselectAllNodesCommand = new RelayCommand(DeselectAllNodes);
 
 		DeleteNodesCommand = new RelayCommand(DeleteNodes);
+	}
+
+	protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+	{
+		base.OnPropertyChanged(e);
+		
+		if (e.PropertyName == nameof(Nodes))
+		{
+			RunnerViewModel.Nodes = Nodes.Select(t => t.Content).OfType<IProcessingNode<double>>();
+			RunnerViewModel.InputProviders = Nodes.Select(t => t.Content).OfType<IInputProvider>();
+		}
 	}
 
 	public event SelectionChangedEventHandler? SelectionChanged;
