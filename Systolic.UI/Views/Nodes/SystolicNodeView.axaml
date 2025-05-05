@@ -5,6 +5,7 @@
     x:Class="Systolic.UI.Views.Nodes.SystolicNodeView"
     x:DataType="nodes:SystolicNodeViewModel"
     xmlns="https://github.com/avaloniaui"
+    xmlns:converters="clr-namespace:Systolic.UI.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:nodes="clr-namespace:Systolic.UI.ViewModels.Nodes"
@@ -36,12 +37,32 @@
                         Add Input
                     </Button>
                     <DataGrid
-                        AutoGenerateColumns="True"
                         Grid.Column="0"
                         Grid.ColumnSpan="3"
                         Grid.Row="1"
                         ItemsSource="{Binding Registers}"
-                        VerticalScrollBarVisibility="Hidden" />
+                        VerticalScrollBarVisibility="Hidden">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
+                            <DataGridTextColumn Binding="{Binding Value}" Header="Value" />
+                            <DataGridTemplateColumn Header="Operation">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            Text="{Binding Operation}"
+                                            TextAlignment="Center"
+                                            VerticalAlignment="Center" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                                <DataGridTemplateColumn.CellEditingTemplate>
+                                    <DataTemplate>
+                                        <TextBox Text="{Binding Operation, Converter={x:Static converters:StringToExpressionConverter.Instance}, UpdateSourceTrigger=LostFocus}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellEditingTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </Flyout>
         </Panel.ContextFlyout>
@@ -50,7 +71,7 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                        <Label Content="{Binding Key}" />
+                        <Label Content="{Binding Name}" />
                         <Label Content=":" />
                         <Label Content="{Binding Value}" />
                     </StackPanel>

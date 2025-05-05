@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Avalonia.Collections;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using NodeEditor.Model;
@@ -16,44 +13,43 @@ namespace Systolic.UI.ViewModels.Nodes;
 
 public partial class SystolicNodeViewModel : ViewModelBase, IProcessingNode<double>
 {
-	[ObservableProperty] private AvaloniaDictionary<string, double> _inputRegisters = new();
 	[ObservableProperty] private INode? _parent;
 
-	[ObservableProperty] private ObservableCollection<ObservableKeyValuePair<string, double>> _registers =
-		new();
-
-	private Dictionary<string, Func<IDictionary<string, double>, double>> Operations { get; } =
+	[ObservableProperty] private ObservableCollection<Register> _registers =
 		new();
 
 	public void SetRegister(string registerName, double value)
 	{
-		InputRegisters[registerName] = value;
+		Registers.First(pair => pair.Name == registerName).Value = value;
 	}
 
 	public void PerformOperations()
 	{
-		foreach (var register in Registers) register.Value = Operations[register.Key](InputRegisters);
+		var inputRegisters = Registers.ToDictionary(pair => pair.Name, pair => pair.Value);
+		foreach (var register in Registers) register.Value = register.Operation.ExpressionFunc(inputRegisters);
 	}
 
 	public void ShiftRegisters()
 	{
 		foreach (var link in Parent.Pins.OfType<ExtendedPinViewModel>().Where(t => t.PinType == PinType.Output))
-			link.SetRegister(link.Name!, Registers.First(t => t.Key == link.Name!).Value);
+			link.SetRegister(link.Name!, Registers.First(t => t.Name == link.Name!).Value);
 	}
 
 	public void ResetRegisters()
 	{
-		foreach (var register in InputRegisters) InputRegisters[register.Key] = default!;
+		foreach (var register in Registers) register.Value = default!;
 	}
 
 	[RelayCommand]
 	public void AddRegister(string registerName)
 	{
-		if (Registers.All(t => t.Key != registerName))
+		if (Registers.All(t => t.Name != registerName))
 		{
-			Registers.Add(new ObservableKeyValuePair<string, double>(registerName, default!));
-			InputRegisters[registerName] = default!;
-			Operations[registerName] = inputRegisters => inputRegisters[registerName];
+			Registers.Add(new Register{
+				Name = registerName, 
+				Value = default!, 
+				Operation = new Expression(registerName)
+		});
 			
 			(Parent as NodeViewModel)!.AddPin(0, 0, 10, 10, PinAlignment.Left, registerName, PinType.Input);
 			(Parent as NodeViewModel)!.AddPin(0, 0, 10, 10, PinAlignment.Right, registerName, PinType.Output);

@@ -34,7 +34,12 @@ public partial class RunnerViewModel : ViewModelBase
 	
 	[RelayCommand]
 	public void Step()
-	{
+	{	
+		foreach (var node in Nodes)
+		{
+			node.ShiftRegisters();
+		}
+		
 		foreach (var inputProvider in InputProviders)
 		{
 			inputProvider.ProvideInputs();
@@ -43,11 +48,6 @@ public partial class RunnerViewModel : ViewModelBase
 		foreach (var node in Nodes)
 		{
 			node.PerformOperations();
-		}
-			
-		foreach (var node in Nodes)
-		{
-			node.ShiftRegisters();
 		}
 	}
 	
