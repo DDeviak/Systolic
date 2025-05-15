@@ -5,6 +5,7 @@
     x:Class="Systolic.UI.Views.Nodes.InputSourceNodeView"
     x:CompileBindings="True"
     x:DataType="vm:InputSourceNodeViewModel"
+    x:Name="Control"
     xmlns="https://github.com/avaloniaui"
     xmlns:converters="clr-namespace:Systolic.UI.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -57,6 +58,18 @@
                                         <TextBox Text="{Binding Value, Mode=TwoWay, Converter={x:Static converters:NumberCollectionConverter.Instance}}" />
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellEditingTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button
+                                            Command="{Binding #Control.((vm:InputSourceNodeViewModel)DataContext).RemoveInput, FallbackValue={x:Null}}"
+                                            CommandParameter="{Binding Key}"
+                                            Content="X"
+                                            HorizontalAlignment="Stretch"
+                                            HorizontalContentAlignment="Center" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>

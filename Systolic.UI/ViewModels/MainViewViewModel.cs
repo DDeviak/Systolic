@@ -109,7 +109,7 @@ public partial class MainViewViewModel : ViewModelBase
 				await using var stream = await file.OpenReadAsync();
 				using var reader = new StreamReader(stream);
 				var json = await reader.ReadToEndAsync();
-				var drawing = Editor.Serializer.Deserialize<DrawingNodeViewModel?>(json);
+				var drawing = Editor.Serializer.Deserialize<ExtendedDrawingNodeViewModel?>(json);
 				if (drawing is not null)
 				{
 					Editor.Drawing = drawing;

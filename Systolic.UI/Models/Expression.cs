@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
-namespace Systolic.UI.Models.Implementations;
+namespace Systolic.UI.Models;
 
 public class Expression
 {
@@ -13,6 +14,7 @@ public class Expression
 		Infix = infix;
 	}
 
+	[JsonIgnore]
 	public Func<IDictionary<string, double>, double> ExpressionFunc
 	{
 		get => _expressionFunc ??= BuildExpression(_infix);

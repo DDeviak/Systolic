@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using NodeEditor.Model;
 using NodeEditor.Mvvm;
+using Systolic.UI.ViewModels.Abstractions;
 using Systolic.UI.ViewModels.Nodes;
 using Systolic.UI.ViewModels.Overrides;
 
@@ -79,6 +80,12 @@ public class NodeFactory : INodeFactory
 			},
 			new NodeTemplateViewModel
 			{
+				Title = "Async Systolic Node",
+				Template = CreateAsyncSystolicNode(0, 0),
+				Preview = CreateAsyncSystolicNode(0, 0)
+			},
+			new NodeTemplateViewModel
+			{
 				Title = "Collector",
 				Template = CreateCollectorNode(0, 0),
 				Preview = CreateCollectorNode(0, 0)
@@ -107,6 +114,25 @@ public class NodeFactory : INodeFactory
 		};
 
 		(node.Content as SystolicNodeViewModel).Parent = node;
+
+		return node;
+	}
+	
+	internal static INode CreateAsyncSystolicNode(double x, double y, double width = 60, double height = 60,
+		double pinSize = 10, string name = "PE")
+	{
+		var node = new NodeViewModel
+		{
+			Name = name,
+			X = x,
+			Y = y,
+			Width = width,
+			Height = height,
+			Pins = new ObservableCollection<IPin>(),
+			Content = new AsyncSystolicNodeViewModel()
+		};
+
+		(node.Content as BaseSystolicNodeViewModel).Parent = node;
 
 		return node;
 	}

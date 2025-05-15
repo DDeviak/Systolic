@@ -1,4 +1,4 @@
-namespace Systolic.UI.ViewModels.Nodes;
+namespace Systolic.UI.ViewModels.Abstractions;
 
 public interface IInputProvider
 {

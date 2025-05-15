@@ -3,15 +3,17 @@
     d:DesignWidth="60"
     mc:Ignorable="d"
     x:Class="Systolic.UI.Views.Nodes.SystolicNodeView"
-    x:DataType="nodes:SystolicNodeViewModel"
+    x:DataType="abstractions:BaseSystolicNodeViewModel"
+    x:Name="Control"
     xmlns="https://github.com/avaloniaui"
+    xmlns:abstractions="clr-namespace:Systolic.UI.ViewModels.Abstractions"
     xmlns:converters="clr-namespace:Systolic.UI.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:nodes="clr-namespace:Systolic.UI.ViewModels.Nodes"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.DataContext>
-        <nodes:SystolicNodeViewModel />
+        <abstractions:BaseSystolicNodeViewModel />
     </Design.DataContext>
     <UserControl.Styles>
         <Style Selector="Label">
@@ -28,7 +30,7 @@
                         Grid.Row="0"
                         x:Name="TextBox" />
                     <Button
-                        Command="{Binding AddRegister}"
+                        Command="{Binding AddRegisterCommand}"
                         CommandParameter="{Binding ElementName=TextBox, Path=Text}"
                         Grid.Column="2"
                         Grid.Row="0"
@@ -49,7 +51,7 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
-                                            HorizontalAlignment="Center"
+                                            HorizontalAlignment="Left"
                                             Text="{Binding Operation}"
                                             TextAlignment="Center"
                                             VerticalAlignment="Center" />
@@ -61,12 +63,24 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellEditingTemplate>
                             </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button
+                                            Command="{Binding #Control.((nodes:SystolicNodeViewModel)DataContext).RemoveRegisterCommand, FallbackValue={x:Null}}"
+                                            CommandParameter="{Binding Name}"
+                                            Content="X"
+                                            HorizontalAlignment="Stretch"
+                                            HorizontalContentAlignment="Center" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
             </Flyout>
         </Panel.ContextFlyout>
-        <Rectangle Classes="node" />
+        <Rectangle Classes="node" x:Name="Rectangle" />
         <ItemsControl ItemsSource="{Binding Registers}" VerticalAlignment="Center">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>

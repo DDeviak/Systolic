@@ -1,6 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace Systolic.UI.Models.Implementations;
+namespace Systolic.UI.Models;
 
 public partial class Register : ObservableObject
 {

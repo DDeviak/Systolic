@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 using Avalonia.Data.Converters;
-using Systolic.UI.Models.Implementations;
+using Systolic.UI.Models;
 
 namespace Systolic.UI.Converters;
 

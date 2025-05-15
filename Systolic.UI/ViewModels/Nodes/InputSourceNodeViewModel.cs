@@ -4,8 +4,8 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using NodeEditor.Model;
 using NodeEditor.Mvvm;
-using Systolic.UI.Models.Implementations;
 using Systolic.UI.Services;
+using Systolic.UI.ViewModels.Abstractions;
 using Systolic.UI.ViewModels.Overrides;
 
 namespace Systolic.UI.ViewModels.Nodes;
@@ -13,7 +13,7 @@ namespace Systolic.UI.ViewModels.Nodes;
 public partial class InputSourceNodeViewModel : ViewModelBase, IInputProvider
 {
 	[ObservableProperty]
-	private ObservableCollection<ObservableKeyValuePair<string, ObservableCollection<double>>> _inputs =
+	private ObservableCollection<Models.ObservableKeyValuePair<string, ObservableCollection<double>>> _inputs =
 		new();
 
 	[ObservableProperty] private INode _parent = null!;
@@ -39,11 +39,22 @@ public partial class InputSourceNodeViewModel : ViewModelBase, IInputProvider
 		if (Inputs.All(i => i.Key != inputName))
 		{
 			var collection = new ObservableCollection<double>();
-			var pair = new ObservableKeyValuePair<string, ObservableCollection<double>>(inputName, collection);
+			var pair = new Models.ObservableKeyValuePair<string, ObservableCollection<double>>(inputName, collection);
 			Inputs.Add(pair);
 
 			(Parent as NodeViewModel)!.AddPin(0, 0, 10, 10, PinAlignment.Left, inputName,
 				PinType.Output);
 		}
+	}
+	
+	[RelayCommand]
+	public void RemoveInput(string inputName)
+	{
+		if (Inputs.All(i => i.Key != inputName)) return;
+		var pair = Inputs.First(i => i.Key == inputName);
+		Inputs.Remove(pair);
+		var pin = (Parent as NodeViewModel)!.Pins!.OfType<ExtendedPinViewModel>()
+			.First(t => t.Name == inputName);
+		(Parent as NodeViewModel)!.Pins!.Remove(pin);
 	}
 }

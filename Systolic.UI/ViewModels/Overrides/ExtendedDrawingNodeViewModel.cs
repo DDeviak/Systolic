@@ -8,6 +8,7 @@ using CommunityToolkit.Mvvm.Input;
 using NodeEditor.Model;
 using NodeEditor.Mvvm;
 using Systolic.Core.Abstractions;
+using Systolic.UI.ViewModels.Abstractions;
 using Systolic.UI.ViewModels.Nodes;
 
 namespace Systolic.UI.ViewModels.Overrides;
@@ -56,7 +57,7 @@ public partial class ExtendedDrawingNodeViewModel : NodeViewModel, IDrawingNode
 		
 		if (e.PropertyName == nameof(Nodes))
 		{
-			RunnerViewModel.Nodes = Nodes.Select(t => t.Content).OfType<IProcessingNode<double>>();
+			RunnerViewModel.Nodes = Nodes.Select(t => t.Content).OfType<ISystolicNode>();
 			RunnerViewModel.InputProviders = Nodes.Select(t => t.Content).OfType<IInputProvider>();
 		}
 	}

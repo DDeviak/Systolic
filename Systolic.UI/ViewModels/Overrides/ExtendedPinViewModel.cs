@@ -3,6 +3,7 @@ using NodeEditor.Model;
 using NodeEditor.Mvvm;
 using Systolic.Core.Abstractions;
 using Systolic.Core.Implementations;
+using Systolic.UI.ViewModels.Nodes;
 
 namespace Systolic.UI.ViewModels.Overrides;
 
@@ -16,13 +17,18 @@ public enum PinType
 public class ExtendedPinViewModel : PinViewModel, INode<double>
 {
 	public INode<double>? Node { get; set; }
+	public INode<double>? Pin { get; set; }
 
 	public PinType PinType { get; set; }
 
 	public void SetRegister(string registerName, double value)
 	{
 		if (PinType == PinType.None) return;
-		if (PinType == PinType.Input) Node ??= Parent!.Content as INode<double>;
+		if (PinType == PinType.Input)
+		{
+			Node ??= Parent!.Content as INode<double>;
+			if(Node is not CollectorNodeViewModel) registerName = Name!;
+		}
 
 		Node?.SetRegister(registerName, value);
 	}
