@@ -29,7 +29,7 @@
             DockPanel.Dock="Right"
             Margin="0"
             Padding="6,7,6,7"
-            ToolTip.Tip="Settings">
+            ToolTip.Tip="Налаштування">
             <Button.Flyout>
                 <Flyout Placement="BottomEdgeAlignedRight" ShowMode="TransientWithDismissOnPointerMoveAway">
                     <editor:DrawingNodeProperties
@@ -60,7 +60,7 @@
             DockPanel.Dock="Left"
             Margin="0"
             Padding="6,7,6,7"
-            ToolTip.Tip="Toolbox">
+            ToolTip.Tip="Інструментарій">
             <Viewbox DockPanel.Dock="Left" Width="16">
                 <PathIcon Data="M2.75254822,18 L21.2525482,18 C21.6667618,18 22.0025482,18.3357864 22.0025482,18.75 C22.0025482,19.1296958 21.7203943,19.443491 21.3543188,19.4931534 L21.2525482,19.5 L2.75254822,19.5 C2.33833466,19.5 2.00254822,19.1642136 2.00254822,18.75 C2.00254822,18.3703042 2.2847021,18.056509 2.65077766,18.0068466 L2.75254822,18 L21.2525482,18 L2.75254822,18 Z M2.75254822,11.5030063 L21.2525482,11.5030063 C21.6667618,11.5030063 22.0025482,11.8387927 22.0025482,12.2530063 C22.0025482,12.6327021 21.7203943,12.9464972 21.3543188,12.9961597 L21.2525482,13.0030063 L2.75254822,13.0030063 C2.33833466,13.0030063 2.00254822,12.6672199 2.00254822,12.2530063 C2.00254822,11.8733105 2.2847021,11.5595153 2.65077766,11.5098529 L2.75254822,11.5030063 L21.2525482,11.5030063 L2.75254822,11.5030063 Z M2.75168905,5.0032392 L21.251689,5.0032392 C21.6659026,5.0032392 22.001689,5.33902564 22.001689,5.7532392 C22.001689,6.13293497 21.7195352,6.44673016 21.3534596,6.49639258 L21.251689,6.5032392 L2.75168905,6.5032392 C2.33747549,6.5032392 2.00168905,6.16745276 2.00168905,5.7532392 C2.00168905,5.37354343 2.28384293,5.05974824 2.64991849,5.01008582 L2.75168905,5.0032392 L21.251689,5.0032392 L2.75168905,5.0032392 Z" />
             </Viewbox>
@@ -70,10 +70,10 @@
 
         <Menu IsVisible="{x:Static ui:App.EnableMainMenu}">
             <!--  File  -->
-            <MenuItem Header="_File">
+            <MenuItem Header="_Файл">
                 <MenuItem
                     Command="{Binding NewCommand}"
-                    Header="_New"
+                    Header="_Новий"
                     InputGesture="{OnPlatform macOS=CMD+N,
                                               iOS=CMD+N,
                                               Default=Ctrl+N}">
@@ -87,7 +87,7 @@
                 <Separator IsVisible="{x:Static ui:App.EnableInputOutput}" />
                 <MenuItem
                     Command="{Binding OpenCommand}"
-                    Header="_Open..."
+                    Header="_Відкрити..."
                     InputGesture="{OnPlatform macOS=CMD+O,
                                               iOS=CMD+O,
                                               Default=Ctrl+O}"
@@ -102,7 +102,7 @@
                 <Separator IsVisible="{x:Static ui:App.EnableInputOutput}" />
                 <MenuItem
                     Command="{Binding SaveCommand}"
-                    Header="_Save..."
+                    Header="_Зберегти..."
                     InputGesture="{OnPlatform macOS=CMD+S,
                                               iOS=CMD+S,
                                               Default=Ctrl+S}"
@@ -117,19 +117,19 @@
                 <Separator IsVisible="{x:Static ui:App.EnableInputOutput}" />
                 <MenuItem
                     Command="{Binding ExportCommand}"
-                    Header="Export..."
+                    Header="Експортувати..."
                     IsVisible="{x:Static ui:App.EnableInputOutput}" />
                 <Separator IsVisible="{x:Static ui:App.EnableInputOutput}" />
                 <MenuItem
                     Command="{Binding ExitCommand}"
-                    Header="E_xit"
+                    Header="Вийти"
                     IsVisible="{x:Static ui:App.EnableInputOutput}" />
             </MenuItem>
             <!--  Edit  -->
-            <MenuItem Header="_Edit">
+            <MenuItem Header="_Редагувати">
                 <MenuItem
                     Command="{Binding Editor.Drawing.CutNodesCommand, FallbackValue={x:Null}}"
-                    Header="Cu_t"
+                    Header="Вирізати"
                     InputGesture="{OnPlatform macOS=CMD+X,
                                               iOS=CMD+X,
                                               Default=Ctrl+X}">
@@ -142,7 +142,7 @@
                 </MenuItem>
                 <MenuItem
                     Command="{Binding Editor.Drawing.CopyNodesCommand, FallbackValue={x:Null}}"
-                    Header="_Copy"
+                    Header="_Копіювати"
                     InputGesture="{OnPlatform macOS=CMD+C,
                                               iOS=CMD+C,
                                               Default=Ctrl+C}">
@@ -155,7 +155,7 @@
                 </MenuItem>
                 <MenuItem
                     Command="{Binding Editor.Drawing.PasteNodesCommand, FallbackValue={x:Null}}"
-                    Header="_Paste"
+                    Header="_Вставити"
                     InputGesture="{OnPlatform macOS=CMD+V,
                                               iOS=CMD+V,
                                               Default=Ctrl+V}">
@@ -168,25 +168,25 @@
                 </MenuItem>
                 <MenuItem
                     Command="{Binding Editor.Drawing.DuplicateNodesCommand, FallbackValue={x:Null}}"
-                    Header="D_uplicate"
+                    Header="Дублювати"
                     InputGesture="{OnPlatform macOS=CMD+D,
                                               iOS=CMD+D,
                                               Default=Ctrl+D}" />
                 <Separator />
                 <MenuItem
                     Command="{Binding Editor.Drawing.SelectAllNodesCommand, FallbackValue={x:Null}}"
-                    Header="Select _All"
+                    Header="Виділити всі"
                     InputGesture="{OnPlatform macOS=CMD+A,
                                               iOS=CMD+A,
                                               Default=Ctrl+A}" />
                 <MenuItem
                     Command="{Binding Editor.Drawing.DeselectAllNodesCommand, FallbackValue={x:Null}}"
-                    Header="De_select All"
+                    Header="Зняти виділення"
                     InputGesture="Escape" />
                 <Separator />
                 <MenuItem
                     Command="{Binding Editor.Drawing.DeleteNodesCommand, FallbackValue={x:Null}}"
-                    Header="_Delete"
+                    Header="Видалити"
                     InputGesture="Delete">
                     <MenuItem.Icon>
                         <PathIcon
@@ -198,7 +198,7 @@
             </MenuItem>
             <!--  Zoom  -->
             <MenuItem
-                Header="_Zoom"
+                Header="Збільшення"
                 x:CompileBindings="False"
                 x:DataType="views1:MenuView">
                 <MenuItem
@@ -218,7 +218,7 @@
                 <Separator />
                 <MenuItem
                     Command="{Binding #MenuUserControl.ZoomControl.ZoomInCommand, FallbackValue={x:Null}}"
-                    Header="Zoom _In"
+                    Header="Приблизити"
                     InputGesture="Add">
                     <MenuItem.Icon>
                         <PathIcon
@@ -229,7 +229,7 @@
                 </MenuItem>
                 <MenuItem
                     Command="{Binding #MenuUserControl.ZoomControl.ZoomOutCommand, FallbackValue={x:Null}}"
-                    Header="Zoom _Out"
+                    Header="Віддалити"
                     InputGesture="Subtract">
                     <MenuItem.Icon>
                         <PathIcon
@@ -241,19 +241,19 @@
                 <Separator />
                 <MenuItem
                     Command="{Binding #MenuUserControl.ZoomControl.FitCanvasCommand, FallbackValue={x:Null}}"
-                    Header="Fit Canvas"
+                    Header="Вмістити полотно"
                     InputGesture="{OnPlatform macOS=CMD+D1,
                                               iOS=CMD+D1,
                                               Default=Ctrl+D1}" />
                 <MenuItem
                     Command="{Binding #MenuUserControl.ZoomControl.FitToFillCommand, FallbackValue={x:Null}}"
-                    Header="Fit to Fill"
+                    Header="Припасувати полотно"
                     InputGesture="{OnPlatform macOS=CMD+D2,
                                               iOS=CMD+D2,
                                               Default=Ctrl+D2}" />
                 <MenuItem
                     Command="{Binding #MenuUserControl.ZoomControl.FillCanvasCommand, FallbackValue={x:Null}}"
-                    Header="Fill Canvas"
+                    Header="Заповнити полотно"
                     InputGesture="{OnPlatform macOS=CMD+D3,
                                               iOS=CMD+D3,
                                               Default=Ctrl+D3}" />

@@ -28,10 +28,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Systolic.Core\Systolic.Core.csproj"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <Compile Update="Views\Nodes\InputSourceNodeView.axaml.cs">
             <SubType>Code</SubType>
         </Compile>

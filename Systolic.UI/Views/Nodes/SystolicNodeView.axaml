@@ -36,7 +36,7 @@
                         Grid.Row="0"
                         HorizontalAlignment="Right"
                         IsDefault="True">
-                        Add Input
+                        Додати регістр
                     </Button>
                     <DataGrid
                         Grid.Column="0"
@@ -45,9 +45,9 @@
                         ItemsSource="{Binding Registers}"
                         VerticalScrollBarVisibility="Hidden">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
-                            <DataGridTextColumn Binding="{Binding Value}" Header="Value" />
-                            <DataGridTemplateColumn Header="Operation">
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Назва" />
+                            <DataGridTextColumn Binding="{Binding Value}" Header="Значення" />
+                            <DataGridTemplateColumn Header="Операція">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock

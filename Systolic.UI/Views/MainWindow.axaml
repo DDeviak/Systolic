@@ -30,7 +30,7 @@
     <NativeMenu.Menu>
         <NativeMenu>
             <!--  File  -->
-            <NativeMenuItem Header="File">
+            <NativeMenuItem Header="Файл">
                 <NativeMenu>
                     <NativeMenuItem Command="{Binding NewCommand}" Header="New" />
                     <NativeMenuItemSeparator />
@@ -39,72 +39,72 @@
                         Gesture="{OnPlatform macOS=CMD+O,
                                              iOS=CMD+O,
                                              Default=Ctrl+O}"
-                        Header="Open..." />
+                        Header="Відкрити..." />
                     <NativeMenuItemSeparator />
                     <NativeMenuItem
                         Command="{Binding SaveCommand}"
                         Gesture="{OnPlatform macOS=CMD+S,
                                              iOS=CMD+S,
                                              Default=Ctrl+S}"
-                        Header="Save..." />
+                        Header="Зберегти..." />
                     <NativeMenuItemSeparator />
-                    <NativeMenuItem Command="{Binding ExportCommand}" Header="Export..." />
+                    <NativeMenuItem Command="{Binding ExportCommand}" Header="Експортувати..." />
                     <NativeMenuItemSeparator />
                     <NativeMenuItem
                         Command="{Binding ExitCommand}"
                         Gesture="{OnPlatform macOS=CMD+Q,
                                              iOS=CMD+Q,
                                              Default=Ctrl+Q}"
-                        Header="Quit" />
+                        Header="Вийти" />
                 </NativeMenu>
             </NativeMenuItem>
             <!--  Edit  -->
-            <NativeMenuItem Header="Edit">
+            <NativeMenuItem Header="Редагувати">
                 <NativeMenu>
                     <NativeMenuItem
                         Command="{Binding Editor.Drawing.CutNodesCommand, FallbackValue={x:Null}}"
                         Gesture="{OnPlatform macOS=CMD+X,
                                              iOS=CMD+X,
                                              Default=Ctrl+X}"
-                        Header="Cut" />
+                        Header="Вирізати" />
                     <NativeMenuItem
                         Command="{Binding Editor.Drawing.CopyNodesCommand, FallbackValue={x:Null}}"
                         Gesture="{OnPlatform macOS=CMD+C,
                                              iOS=CMD+C,
                                              Default=Ctrl+C}"
-                        Header="Copy" />
+                        Header="Копіювати" />
                     <NativeMenuItem
                         Command="{Binding Editor.Drawing.PasteNodesCommand, FallbackValue={x:Null}}"
                         Gesture="{OnPlatform macOS=CMD+V,
                                              iOS=CMD+V,
                                              Default=Ctrl+V}"
-                        Header="Paste" />
+                        Header="Вставити" />
                     <NativeMenuItem
                         Command="{Binding Editor.Drawing.DuplicateNodesCommand, FallbackValue={x:Null}}"
                         Gesture="{OnPlatform macOS=CMD+D,
                                              iOS=CMD+D,
                                              Default=Ctrl+D}"
-                        Header="Duplicate" />
+                        Header="Дублювати" />
                     <NativeMenuItemSeparator />
                     <NativeMenuItem
                         Command="{Binding Editor.Drawing.SelectAllNodesCommand, FallbackValue={x:Null}}"
                         Gesture="{OnPlatform macOS=CMD+A,
                                              iOS=CMD+A,
                                              Default=Ctrl+A}"
-                        Header="Select All" />
+                        Header="Виділити всі" />
                     <NativeMenuItem
                         Command="{Binding Editor.Drawing.DeselectAllNodesCommand, FallbackValue={x:Null}}"
                         Gesture="Escape"
-                        Header="Deselect All" />
+                        Header="Зняти виділення" />
                     <NativeMenuItemSeparator />
                     <NativeMenuItem
                         Command="{Binding Editor.Drawing.DeleteNodesCommand, FallbackValue={x:Null}}"
                         Gesture="Delete"
-                        Header="Delete" />
+                        Header="Видалити" />
                 </NativeMenu>
             </NativeMenuItem>
             <!--  Zoom  -->
-            <NativeMenuItem Header="Zoom">
+            <NativeMenuItem Header="Збільшення">
                 <NativeMenu>
                     <NativeMenuItem
                         Command="{Binding #MainView.ZoomControl.ZoomToCommand, FallbackValue={x:Null}}"
@@ -124,30 +124,30 @@
                     <NativeMenuItem
                         Command="{Binding #MainView.ZoomControl.ZoomInCommand, FallbackValue={x:Null}}"
                         Gesture="Add"
-                        Header="Zoom In" />
+                        Header="Приблизити" />
                     <NativeMenuItem
                         Command="{Binding #MainView.ZoomControl.ZoomOutCommand, FallbackValue={x:Null}}"
                         Gesture="Subtract"
-                        Header="Zoom Out" />
+                        Header="Віддалити" />
                     <NativeMenuItemSeparator />
                     <NativeMenuItem
                         Command="{Binding #MainView.ZoomControl.FitCanvasCommand, FallbackValue={x:Null}}"
                         Gesture="{OnPlatform macOS=CMD+D1,
                                              iOS=CMD+D1,
                                              Default=Ctrl+D1}"
-                        Header="Fit Canvas" />
+                        Header="Вмістити полотно" />
                     <NativeMenuItem
                         Command="{Binding #MainView.ZoomControl.FitToFillCommand, FallbackValue={x:Null}}"
                         Gesture="{OnPlatform macOS=CMD+D2,
                                              iOS=CMD+D2,
                                              Default=Ctrl+D2}"
-                        Header="Fit to Fill" />
+                        Header="Припасувати полотно" />
                     <NativeMenuItem
                         Command="{Binding #MainView.ZoomControl.FillCanvasCommand, FallbackValue={x:Null}}"
                         Gesture="{OnPlatform macOS=CMD+D3,
                                              iOS=CMD+D3,
                                              Default=Ctrl+D3}"
-                        Header="Fill Canvas" />
+                        Header="Заповнити полотно" />
                 </NativeMenu>
             </NativeMenuItem>
         </NativeMenu>

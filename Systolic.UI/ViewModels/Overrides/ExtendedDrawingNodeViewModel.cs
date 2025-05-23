@@ -7,7 +7,6 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using NodeEditor.Model;
 using NodeEditor.Mvvm;
-using Systolic.Core.Abstractions;
 using Systolic.UI.ViewModels.Abstractions;
 using Systolic.UI.ViewModels.Nodes;
 

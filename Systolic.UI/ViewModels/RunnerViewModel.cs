@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Systolic.Core.Abstractions;
 using Systolic.UI.ViewModels.Abstractions;
 
 namespace Systolic.UI.ViewModels;

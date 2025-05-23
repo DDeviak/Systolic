@@ -1,5 +1,5 @@
 <Application
-    Name="NodeEditor"
+    Name="Редактор систолічних структур"
     RequestedThemeVariant="Dark"
     x:Class="Systolic.UI.App"
     x:CompileBindings="True"

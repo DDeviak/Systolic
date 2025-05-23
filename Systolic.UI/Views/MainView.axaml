@@ -139,7 +139,7 @@
             IsVisible="False" />
         <Grid>
             <Grid.Resources>
-                <x:Double x:Key="ToolboxWidth">200</x:Double>
+                <x:Double x:Key="ToolboxWidth">300</x:Double>
             </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{Binding IsToolboxVisible, Converter={x:Static converters:ColumnWidthConverter.Instance}, ConverterParameter={StaticResource ToolboxWidth}}" />
@@ -161,17 +161,17 @@
                     VerticalAlignment="Bottom">
                     <Button
                         Command="{Binding Start}"
-                        Content="Start"
+                        Content="Старт"
                         Grid.Column="0"
                         Grid.Row="" />
                     <Button
                         Command="{Binding Stop}"
-                        Content="Stop"
+                        Content="Стоп"
                         Grid.Column="1"
                         Grid.Row="" />
                     <Button
                         Command="{Binding Step}"
-                        Content="Step"
+                        Content="Крок"
                         Grid.Column="2"
                         Grid.Row="" />
                     <Slider

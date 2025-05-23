@@ -25,8 +25,8 @@
                 <DockPanel Width="200">
                     <DataGrid IsReadOnly="True" ItemsSource="{Binding Registers}">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Key}" Header="Register" />
-                            <DataGridTextColumn Binding="{Binding Value, Converter={x:Static converters:NumberCollectionConverter.Instance}}" Header="Values" />
+                            <DataGridTextColumn Binding="{Binding Key}" Header="Регістр" />
+                            <DataGridTextColumn Binding="{Binding Value, Converter={x:Static converters:NumberCollectionConverter.Instance}}" Header="Значення" />
                         </DataGrid.Columns>
                     </DataGrid>
                 </DockPanel>

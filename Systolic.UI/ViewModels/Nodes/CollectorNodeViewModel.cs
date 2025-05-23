@@ -1,7 +1,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
-using Systolic.Core.Abstractions;
+using Systolic.UI.ViewModels.Abstractions;
 
 namespace Systolic.UI.ViewModels.Nodes;
 

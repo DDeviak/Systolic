@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using NodeEditor.Model;
 using NodeEditor.Mvvm;
-using Systolic.Core.Abstractions;
-using Systolic.Core.Implementations;
+using Systolic.UI.Models;
+using Systolic.UI.ViewModels.Abstractions;
 using Systolic.UI.ViewModels.Nodes;
 
 namespace Systolic.UI.ViewModels.Overrides;

@@ -1,7 +1,8 @@
+using System.Collections.Generic;
 using System.Numerics;
-using Systolic.Core.Abstractions;
+using Systolic.UI.ViewModels.Abstractions;
 
-namespace Systolic.Core.Implementations;
+namespace Systolic.UI.Models;
 
 public class MulticastNode<T> : INode<T> where T : INumber<T>
 {

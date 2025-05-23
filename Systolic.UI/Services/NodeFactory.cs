@@ -74,25 +74,25 @@ public class NodeFactory : INodeFactory
 		{
 			new NodeTemplateViewModel
 			{
-				Title = "Systolic Node",
+				Title = "Процесор",
 				Template = CreateSystolicNode(0, 0),
 				Preview = CreateSystolicNode(0, 0)
 			},
 			new NodeTemplateViewModel
 			{
-				Title = "Async Systolic Node",
+				Title = "Асинхронний процесор",
 				Template = CreateAsyncSystolicNode(0, 0),
 				Preview = CreateAsyncSystolicNode(0, 0)
 			},
 			new NodeTemplateViewModel
 			{
-				Title = "Collector",
+				Title = "Вузол збирання",
 				Template = CreateCollectorNode(0, 0),
 				Preview = CreateCollectorNode(0, 0)
 			},
 			new NodeTemplateViewModel
 			{
-				Title = "Input Source",
+				Title = "Вузол джерело даних",
 				Template = CreateInputSourceNode(0, 0),
 				Preview = CreateInputSourceNode(0, 0)
 			}

@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace Systolic.Core.Abstractions;
+namespace Systolic.UI.ViewModels.Abstractions;
 
 public interface INode<TNumber> where TNumber : INumber<TNumber>
 {
