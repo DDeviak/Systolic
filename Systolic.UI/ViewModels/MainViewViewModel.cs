@@ -10,7 +10,6 @@ using Avalonia.Platform.Storage;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using NodeEditor.Controls;
-using NodeEditor.Mvvm;
 using Systolic.UI.Services;
 using Systolic.UI.ViewModels.Overrides;
 

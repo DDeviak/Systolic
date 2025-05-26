@@ -80,7 +80,7 @@
         <TextBlock
             HorizontalAlignment="Center"
             IsVisible="{Binding Inputs.Count, Converter={x:Static BoolConverters.Not}}"
-            Text="Source" />
+            Text="Джерело" />
         <ItemsControl ItemsSource="{Binding Inputs}" VerticalAlignment="Center">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>

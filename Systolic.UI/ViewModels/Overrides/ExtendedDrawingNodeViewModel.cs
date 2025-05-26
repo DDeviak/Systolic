@@ -1,20 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Newtonsoft.Json;
 using NodeEditor.Model;
 using NodeEditor.Mvvm;
 using Systolic.UI.ViewModels.Abstractions;
-using Systolic.UI.ViewModels.Nodes;
 
 namespace Systolic.UI.ViewModels.Overrides;
 
 public partial class ExtendedDrawingNodeViewModel : NodeViewModel, IDrawingNode
 {
 	private readonly DrawingNodeEditor _editor;
+	[JsonIgnore]
 	[ObservableProperty] private RunnerViewModel _runnerViewModel;
 	[ObservableProperty] private IList<IConnector>? _connectors;
 	[ObservableProperty] private IList<INode>? _nodes;
@@ -54,10 +56,15 @@ public partial class ExtendedDrawingNodeViewModel : NodeViewModel, IDrawingNode
 	{
 		base.OnPropertyChanged(e);
 		
-		if (e.PropertyName == nameof(Nodes))
+		if (e.PropertyName == nameof(Nodes) && Nodes is ObservableCollection<INode> nodes)
 		{
-			RunnerViewModel.Nodes = Nodes.Select(t => t.Content).OfType<ISystolicNode>();
-			RunnerViewModel.InputProviders = Nodes.Select(t => t.Content).OfType<IInputProvider>();
+			nodes.CollectionChanged += (sender, args) =>
+			{
+				RunnerViewModel.Nodes = Nodes.Select(t => t.Content).OfType<ISystolicNode>().ToList();
+				RunnerViewModel.InputProviders = Nodes.Select(t => t.Content).OfType<IInputProvider>().ToList();
+			};
+			RunnerViewModel.Nodes = Nodes.Select(t => t.Content).OfType<ISystolicNode>().ToList();
+			RunnerViewModel.InputProviders = Nodes.Select(t => t.Content).OfType<IInputProvider>().ToList();
 		}
 	}
 

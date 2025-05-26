@@ -22,7 +22,7 @@
     <Panel>
         <Panel.ContextFlyout>
             <Flyout>
-                <DockPanel Width="200">
+                <DockPanel Width="300">
                     <DataGrid IsReadOnly="True" ItemsSource="{Binding Registers}">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Key}" Header="Регістр" />
@@ -36,7 +36,7 @@
         <TextBlock
             HorizontalAlignment="Center"
             IsVisible="{Binding Registers.Count, Converter={x:Static BoolConverters.Not}}"
-            Text="Collector" />
+            Text="Збирач" />
         <ItemsControl ItemsSource="{Binding Registers}" VerticalAlignment="Center">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>

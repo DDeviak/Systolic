@@ -6,6 +6,7 @@
                 <ResourceInclude Source="avares://Systolic.UI/Themes/Overrides/Node.axaml" />
                 <ResourceInclude Source="avares://Systolic.UI/Themes/Overrides/Pins.axaml" />
                 <ResourceInclude Source="avares://Systolic.UI/Themes/Overrides/Editor.axaml" />
+                <ResourceInclude Source="avares://Systolic.UI/Themes/Overrides/DrawingNodeProperties.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>

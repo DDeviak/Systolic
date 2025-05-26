@@ -1,0 +1,126 @@
+﻿<ResourceDictionary
+    x:CompileBindings="True"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTheme TargetType="DrawingNodeProperties" x:Key="{x:Type DrawingNodeProperties}">
+
+        <Setter Property="ClipToBounds" Value="False" />
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <DockPanel>
+                    <!--  Snap  -->
+                    <DockPanel DockPanel.Dock="Bottom">
+                        <ToggleSwitch
+                            DockPanel.Dock="Top"
+                            HorizontalAlignment="Left"
+                            IsChecked="{Binding EnableSnap, RelativeSource={RelativeSource TemplatedParent}}"
+                            Margin="4,4,4,0"
+                            OffContent="Вирівнювання Вимкнено"
+                            OnContent="Вирівнювання Увімкнено"
+                            VerticalAlignment="Center" />
+                        <Grid ColumnDefinitions="Auto,50*,Auto,50*">
+                            <Label
+                                Content="SX"
+                                Grid.Column="0"
+                                Margin="6,0,6,0"
+                                Opacity="0.6"
+                                VerticalAlignment="Center" />
+                            <TextBox
+                                BorderBrush="Transparent"
+                                Grid.Column="1"
+                                Margin="4,4,2,4"
+                                Padding="6"
+                                Text="{Binding SnapX, RelativeSource={RelativeSource TemplatedParent}}"
+                                TextAlignment="Left" />
+                            <Label
+                                Content="SY"
+                                Grid.Column="2"
+                                Margin="6,0,6,0"
+                                Opacity="0.6"
+                                VerticalAlignment="Center" />
+                            <TextBox
+                                BorderBrush="Transparent"
+                                Grid.Column="3"
+                                Margin="2,4,4,4"
+                                Padding="6"
+                                Text="{Binding SnapY, RelativeSource={RelativeSource TemplatedParent}}"
+                                TextAlignment="Left" />
+                        </Grid>
+                    </DockPanel>
+                    <!--  Grid  -->
+                    <DockPanel DockPanel.Dock="Bottom">
+                        <ToggleSwitch
+                            DockPanel.Dock="Top"
+                            HorizontalAlignment="Left"
+                            IsChecked="{Binding EnableGrid, RelativeSource={RelativeSource TemplatedParent}}"
+                            Margin="4,4,4,0"
+                            OffContent="Сітка Вимкнена"
+                            OnContent="Сітка Увімкнена"
+                            VerticalAlignment="Center" />
+                        <Grid ColumnDefinitions="Auto,50*,Auto,50*">
+                            <Label
+                                Content="CW"
+                                Grid.Column="0"
+                                Margin="6,0,6,0"
+                                Opacity="0.6"
+                                VerticalAlignment="Center" />
+                            <TextBox
+                                BorderBrush="Transparent"
+                                Grid.Column="1"
+                                Margin="4,4,2,4"
+                                Padding="6"
+                                Text="{Binding GridCellWidth, RelativeSource={RelativeSource TemplatedParent}}"
+                                TextAlignment="Left" />
+                            <Label
+                                Content="CH"
+                                Grid.Column="2"
+                                Margin="6,0,6,0"
+                                Opacity="0.6"
+                                VerticalAlignment="Center" />
+                            <TextBox
+                                BorderBrush="Transparent"
+                                Grid.Column="3"
+                                Margin="2,4,4,4"
+                                Padding="6"
+                                Text="{Binding GridCellHeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                TextAlignment="Left" />
+                        </Grid>
+                    </DockPanel>
+                    <!--  Width/Height  -->
+                    <Grid ColumnDefinitions="Auto,50*,Auto,50*" DockPanel.Dock="Bottom">
+                        <Label
+                            Content="W"
+                            Grid.Column="0"
+                            Margin="6,0,6,0"
+                            Opacity="0.6"
+                            VerticalAlignment="Center" />
+                        <TextBox
+                            BorderBrush="Transparent"
+                            Grid.Column="1"
+                            Margin="4,4,2,4"
+                            Padding="6"
+                            Text="{Binding DrawingWidth, RelativeSource={RelativeSource TemplatedParent}}"
+                            TextAlignment="Left" />
+                        <Label
+                            Content="H"
+                            Grid.Column="2"
+                            Margin="6,0,6,0"
+                            Opacity="0.6"
+                            VerticalAlignment="Center" />
+                        <TextBox
+                            BorderBrush="Transparent"
+                            Grid.Column="3"
+                            Margin="2,4,4,4"
+                            Padding="6"
+                            Text="{Binding DrawingHeight, RelativeSource={RelativeSource TemplatedParent}}"
+                            TextAlignment="Left" />
+                    </Grid>
+                </DockPanel>
+            </ControlTemplate>
+        </Setter>
+
+    </ControlTheme>
+
+</ResourceDictionary>
